@@ -1,5 +1,8 @@
 package de.ml.file.generator.css;
 
+import de.ml.file.generator.config.EConfig;
+import de.ml.file.generator.config.ECssConfig;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -16,20 +19,6 @@ public class CssGen {
         createCssFile(dir);
     }
 
-    private static final String NEW_LINE = "\n";
-
-    /*CSS*/
-    private static final String CSS_FILE = "styles.css";
-    private static final String CSS_BODY = "body";
-    private static final String CURLY_BRACKET_OPEN = "{";
-    private static final String CURLY_BRACKET_CLOSE = "}";
-    private static final String FONT_STYLE = "font-style: normal;";
-    private static final String FONT_WEIGHT = "font-weight: normal;";
-    private static final String DEFAULT_MARGIN = " margin: 0;";
-    private static final String DEFAULT_PADDING = "padding: 0;";
-    private static final String STAR = "*";
-    private static final String BOX_SIZING = "box-sizing: border-box;";
-
     private static void createCssFile(String dir) {
 
         String path = String.format("%s%s%s", dir, File.separator, "css");
@@ -37,7 +26,7 @@ public class CssGen {
         System.out.println("CSS " + path);
 
 
-        File cssFile = new File(String.format("%s%s%s", path, File.separator, CSS_FILE));
+        File cssFile = new File(String.format("%s%s%s", path, File.separator, ECssConfig.CSS_FILE.getCssConf()));
 
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(cssFile.getAbsolutePath()))) {
@@ -50,24 +39,23 @@ public class CssGen {
     }
 
     private static String getCss() {
-        return CSS_BODY
-                + CURLY_BRACKET_OPEN
-                + NEW_LINE
-                + FONT_STYLE
-                + NEW_LINE
-                + FONT_WEIGHT
-                + DEFAULT_MARGIN
-                + NEW_LINE
-                + DEFAULT_PADDING
-                + NEW_LINE
-                + CURLY_BRACKET_CLOSE
-                + NEW_LINE
-                + STAR
-                + CURLY_BRACKET_OPEN
-                + NEW_LINE
-                + BOX_SIZING
-                + NEW_LINE
-                + CURLY_BRACKET_CLOSE;
-
+        return ECssConfig.CSS_BODY.getCssConf()
+                + ECssConfig.CURLY_BRACKET_OPEN.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.FONT_STYLE.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.FONT_WEIGHT.getCssConf()
+                + ECssConfig.DEFAULT_MARGIN.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.DEFAULT_PADDING.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.CURLY_BRACKET_CLOSE.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.STAR.getCssConf()
+                + ECssConfig.CURLY_BRACKET_OPEN.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.BOX_SIZING.getCssConf()
+                + EConfig.NEW_LINE.getConfig()
+                + ECssConfig.CURLY_BRACKET_CLOSE.getCssConf();
     }
 }
