@@ -28,7 +28,7 @@ $ \FileGenerator\run-mvn.bat
 
 It creates a jar file via mvn wrapper
 
-First two:
+Step two:
 
 open html-gen.bat and set the path to
 
@@ -44,7 +44,7 @@ You can copy the batch-script to where you need it or put it into the environmen
 
 And execute it.
 
-From the directory from you the script aurufen then the folder with the files is generated.
+The folder with the files is then created from the directory from which you call the script.
 
 ## MIT-License
 * [MIT License](MIT-LICENSE.txt)
