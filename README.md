@@ -28,7 +28,7 @@ $ \FileGenerator\run-mvn.bat
 
 It creates a jar file via mvn wrapper
 
-First two:
+Step two:
 
 open html-gen.bat and set the path to
 
