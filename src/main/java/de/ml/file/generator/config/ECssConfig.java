@@ -1,7 +1,5 @@
 package de.ml.file.generator.config;
 
-import java.io.File;
-
 /**
  * @author Max on 09.04.2022
  * @project FileGenerator

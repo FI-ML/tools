@@ -9,6 +9,7 @@ public enum EConfig {
 
 
     NEW_LINE("\n"),
+    TAB("\t"),
     INFO_COLOR("\u001B[42m"),
     OPERATING_SYSTEM_NAME(System.getProperty("os.name")),
     DIRECTORY(System.getProperty("user.dir"));

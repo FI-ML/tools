@@ -29,6 +29,10 @@ public class Main {
 
         try (Scanner sc = new Scanner(System.in)) {
             titleName = getTitle(sc);
+
+            deleteDirectoryIsExist(titleName);
+
+            System.out.println();
             htmlTitles = getHtmlTitles(sc);
         } catch (Exception e) {
             System.err.println("ERROR: Scanner have problem, " + e.getMessage());
@@ -53,13 +57,12 @@ public class Main {
         String input = "";
 
         Set<String> titles = new HashSet<>();
-
         if (getWithIndexHtml(sc)) {
             titles.add("index.html");
             System.out.println("index.html files was added");
         }
-
-        System.out.println("Add your html files, enter q and you can go to the next step");
+        System.out.println();
+        System.out.println("Add your html files, enter q to exit");
 
         while (isQuiet(input)) {
             input = sc.next().toLowerCase(Locale.ROOT).trim();
@@ -95,13 +98,10 @@ public class Main {
     }
 
     private static String getDirectoryForHtmlAndCss(String titleName) {
-        String globalDirectory = createDirectory(String.format("%s%s%s",
-                EConfig.DIRECTORY.getConfig(),
-                File.separator,
-                titleName));
+        String globalDirectory = createDirectory(String.format("%s%s%s", EConfig.DIRECTORY.getConfig(), File.separator, titleName));
 
-        String src = createDirectory(String.format("%s%s%s",
-                globalDirectory, File.separator, "src"));
+
+        String src = createDirectory(String.format("%s%s%s", globalDirectory, File.separator, "src"));
 
         createDirectory(String.format("%s%s%s", src, File.separator, "css"));
 
@@ -112,10 +112,7 @@ public class Main {
     private static String createDirectory(String path) {
         File fileDirectory = new File(path);
 
-        deleteDirectoryIsExist(fileDirectory);
-
         if (fileDirectory.mkdir()) {
-            System.out.println("Directory is created: " + fileDirectory.getPath());
             return fileDirectory.getPath();
         } else {
             System.err.println("Failed to create directory: " + fileDirectory.getPath());
@@ -123,12 +120,12 @@ public class Main {
         }
     }
 
-    private static void deleteDirectoryIsExist(File fileDirectory) {
+    private static void deleteDirectoryIsExist(String titleName) {
+        File file = new File(String.format("%s%s%s", EConfig.DIRECTORY.getConfig(), File.separator, titleName));
 
-        if (fileDirectory.exists()) {
-            if (fileDirectory.delete()) {
-                System.out.println(EConfig.INFO_COLOR.getConfig() + "This directory is deleted");
-            }
+        if (file.exists()) {
+            System.out.println("Directory exist, generator close good bye");
+            System.exit(200);
         }
     }
 
@@ -139,4 +136,5 @@ public class Main {
             return input + ".html";
         }
     }
+    
 }

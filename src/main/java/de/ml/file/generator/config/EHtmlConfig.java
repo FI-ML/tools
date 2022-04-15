@@ -1,7 +1,5 @@
 package de.ml.file.generator.config;
 
-import java.io.File;
-
 /**
  * @author Max on 09.04.2022
  * @project FileGenerator
@@ -19,7 +17,7 @@ public enum EHtmlConfig {
     META_TAG("<meta charset=\"utf-8\">"),
     TITLE_OPEN_TAG("<title>"),
     TITLE_CLOSE_TAG("</title>"),
-    CSS_LINK(String.format("%s%s%s%s", "<link rel=\"stylesheet\" type=\"text/css\" href=\"css", File.separator, "styles.css", "\">")),
+    CSS_LINK(String.format("%s%s%s%s", "<link rel=\"stylesheet\" type=\"text/css\" href=\"css", "/", "styles.css", "\">")),
     BODY_TAG("<body>"),
     BODY_CLOSE_TAG("</body>");
 
