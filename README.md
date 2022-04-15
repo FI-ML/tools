@@ -27,7 +27,8 @@ $ \FileGenerator\run-mvn.bat
 
 #### Last step:
 
-open html-gen.bat and set the path to
+Open html-gen.bat and set the path where the 
+FileGenerator folder is located
 
 ```
 .\FileGenerator\target\FileGenerator.jar
