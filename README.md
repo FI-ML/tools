@@ -4,7 +4,7 @@
 
 * [About](#about)
 * [Setup-Guide](#Setup-Guide)
-* [User guide] (#User-Guide)
+* [User guide](#User-Guide)
 * [MIT-License](#MIT-License)
 
 ## About
