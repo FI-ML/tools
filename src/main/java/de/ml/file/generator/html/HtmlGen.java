@@ -1,7 +1,7 @@
 package de.ml.file.generator.html;
 
 import de.ml.file.generator.config.EConfig;
-import de.ml.file.generator.config.EHtmlConfig;
+import de.ml.file.generator.config.EHTML;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -41,32 +41,34 @@ public class HtmlGen {
 
     private String getHtml(String titleName) {
 
-        return EHtmlConfig.HTML_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.HTM_OPEN_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.HEAD_OPEN_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + EHtmlConfig.META_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + EHtmlConfig.META_VIEWPORT.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + EHtmlConfig.TITLE_OPEN_TAG.getHtmlTag()
-                + titleName.replaceAll(".html", "")
-                + EHtmlConfig.TITLE_CLOSE_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + EHtmlConfig.CSS_LINK.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.HEAD_CLOSE_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.BODY_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.BODY_CLOSE_TAG.getHtmlTag()
-                + EConfig.NEW_LINE.getConfig()
-                + EHtmlConfig.HTM_CLOSE_TAG.getHtmlTag();
+        return new StringBuilder()
+                .append(EHTML.HTML_TAG) //
+                .append(EConfig.NEW_LINE) //
+                .append(EHTML.HTM_OPEN_TAG) //
+                .append(EConfig.NEW_LINE)//
+                .append(EHTML.HEAD_OPEN_TAG) //
+                .append(EConfig.NEW_LINE)//
+                .append(EConfig.TAB)//
+                .append(EHTML.META_TAG) //
+                .append(EConfig.NEW_LINE)//
+                .append(EConfig.TAB)//
+                .append(EHTML.META_VIEWPORT) //
+                .append(EConfig.NEW_LINE)//
+                .append(EConfig.TAB)//
+                .append(EHTML.TITLE_OPEN_TAG) //
+                .append(titleName.replaceAll(".html", "")) //
+                .append(EHTML.TITLE_CLOSE_TAG)//
+                .append(EConfig.NEW_LINE)//
+                .append(EConfig.TAB)//
+                .append(EHTML.CSS_LINK)//
+                .append(EConfig.NEW_LINE)//
+                .append(EHTML.HEAD_CLOSE_TAG)//
+                .append(EConfig.NEW_LINE)//
+                .append(EHTML.BODY_TAG)//
+                .append(EConfig.NEW_LINE)//
+                .append(EHTML.BODY_CLOSE_TAG)//
+                .append(EConfig.NEW_LINE)//
+                .append(EHTML.HTM_CLOSE_TAG) //
+                .toString();
     }
 }

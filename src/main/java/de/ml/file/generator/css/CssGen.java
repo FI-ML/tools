@@ -1,7 +1,7 @@
 package de.ml.file.generator.css;
 
+import de.ml.file.generator.config.ECSS;
 import de.ml.file.generator.config.EConfig;
-import de.ml.file.generator.config.ECssConfig;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -26,7 +26,7 @@ public class CssGen {
         System.out.println("CSS " + path);
 
 
-        File cssFile = new File(String.format("%s%s%s", path, File.separator, ECssConfig.CSS_FILE.getCssConf()));
+        File cssFile = new File(String.format("%s%s%s", path, File.separator, ECSS.CSS_FILE));
 
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(cssFile.getAbsolutePath()))) {
@@ -39,30 +39,32 @@ public class CssGen {
     }
 
     private static String getCss() {
-        return ECssConfig.CSS_BODY.getCssConf()
-                + ECssConfig.CURLY_BRACKET_OPEN.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.FONT_STYLE.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.FONT_WEIGHT.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.DEFAULT_MARGIN.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.DEFAULT_PADDING.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.CURLY_BRACKET_CLOSE.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + ECssConfig.STAR.getCssConf()
-                + ECssConfig.CURLY_BRACKET_OPEN.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + EConfig.TAB.getConfig()
-                + ECssConfig.BOX_SIZING.getCssConf()
-                + EConfig.NEW_LINE.getConfig()
-                + ECssConfig.CURLY_BRACKET_CLOSE.getCssConf();
+        return new StringBuilder()
+                .append(ECSS.CSS_BODY) //
+                .append(ECSS.CURLY_BRACKET_OPEN) //
+                .append(EConfig.NEW_LINE) //
+                .append(EConfig.TAB) //
+                .append(ECSS.FONT_STYLE) //
+                .append(EConfig.NEW_LINE) //
+                .append(EConfig.TAB) //
+                .append(ECSS.FONT_WEIGHT) //
+                .append(EConfig.NEW_LINE) //
+                .append(EConfig.TAB) //
+                .append(ECSS.DEFAULT_MARGIN) //
+                .append(EConfig.NEW_LINE)  //
+                .append(EConfig.TAB) //
+                .append(ECSS.DEFAULT_PADDING) //
+                .append(EConfig.NEW_LINE) //
+                .append(EConfig.TAB) //
+                .append(ECSS.CURLY_BRACKET_CLOSE) //
+                .append(EConfig.NEW_LINE) //
+                .append(ECSS.STAR) //
+                .append(ECSS.CURLY_BRACKET_OPEN) //
+                .append(EConfig.NEW_LINE) //
+                .append(EConfig.TAB) //
+                .append(ECSS.BOX_SIZING) //
+                .append(EConfig.NEW_LINE) //
+                .append(ECSS.CURLY_BRACKET_CLOSE) //
+                .toString();
     }
 }

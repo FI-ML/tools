@@ -98,7 +98,7 @@ public class Main {
     }
 
     private static String getDirectoryForHtmlAndCss(String titleName) {
-        String globalDirectory = createDirectory(String.format("%s%s%s", EConfig.DIRECTORY.getConfig(), File.separator, titleName));
+        String globalDirectory = createDirectory(String.format("%s%s%s", EConfig.DIRECTORY, File.separator, titleName));
 
 
         String src = createDirectory(String.format("%s%s%s", globalDirectory, File.separator, "src"));
@@ -121,7 +121,7 @@ public class Main {
     }
 
     private static void deleteDirectoryIsExist(String titleName) {
-        File file = new File(String.format("%s%s%s", EConfig.DIRECTORY.getConfig(), File.separator, titleName));
+        File file = new File(String.format("%s%s%s", EConfig.DIRECTORY, File.separator, titleName));
 
         if (file.exists()) {
             System.out.println("Directory exist, generator close good bye");
@@ -136,5 +136,5 @@ public class Main {
             return input + ".html";
         }
     }
-    
+
 }

@@ -8,20 +8,35 @@ package de.ml.file.generator.config;
 public enum EConfig {
 
 
-    NEW_LINE("\n"),
-    TAB("\t"),
-    INFO_COLOR("\u001B[42m"),
-    OPERATING_SYSTEM_NAME(System.getProperty("os.name")),
-    DIRECTORY(System.getProperty("user.dir"));
+    NEW_LINE {
+        @Override
+        public String toString() {
+            return "\n";
+        }
+    },
+    TAB {
+        @Override
+        public String toString() {
+            return "\t";
+        }
+    },
+    INFO_COLOR {
+        @Override
+        public String toString() {
+            return "\u001B[42m";
+        }
+    },
+    OPERATING_SYSTEM_NAME {
+        @Override
+        public String toString() {
+            return System.getProperty("os.name");
+        }
+    },
 
-
-    private final String config;
-
-    EConfig(String config) {
-        this.config = config;
-    }
-
-    public String getConfig() {
-        return config;
-    }
+    DIRECTORY {
+        @Override
+        public String toString() {
+            return System.getProperty("user.dir");
+        }
+    };
 }
