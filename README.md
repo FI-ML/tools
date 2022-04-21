@@ -25,7 +25,7 @@ now you have to create the .jar file with the help of maven by executing this co
 $ \FileGenerator\run-mvn.bat
 ```
 
-#### CAUTION
+#### <span style="color:red">!! CAUTION !!</span>
 
 before maven builds the project this command is executed:
 
