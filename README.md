@@ -35,16 +35,24 @@ $ if not "%SomeVariable%"=="html-gen" SETX -m html-gen"%cd%"
 
 this will create a system variable "html-gen". so you can run the hatml-gen in your comand with html-gen
 
-To execute this command you need administrator rights.
-
-If you do not have administrator rights you must before you will I explain inem in the user guide how you can run the
-generator.
-
 ## User-Guide
 
 ### Run
 
 #### With admin rights
+
+modify environment variables on windows:
+
+![img.png](img.png)
+
+---
+
+#### You need help?
+
+[how to modify environment variables on windows](
+https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html)
+
+---
 
 ```bash
 $ html-gen
@@ -90,6 +98,8 @@ now copy the htm-gen.bat into the directory where you need your html project and
 ```
 
 (q) closes the console and the generator is ready.
+
+---
 
 #### result
 
