@@ -15,14 +15,14 @@ A small html files generator written in java.
 
 #### First step:
 
-install java https://java.tutorials24x7.com/blog/how-to-install-java-17-on-windows
+install java https://www.youtube.com/watch?v=rOD4llj6tJg
 
 #### Next step
 
 now you have to create the .jar file with the help of maven by executing this command in your terminal
 
 ```bash
-$ \FileGenerator\run-mvn.bat
+$ your-path\run-mvn.bat
 ```
 
 #### <span style="color:red">!! CAUTION !!</span>
@@ -30,7 +30,7 @@ $ \FileGenerator\run-mvn.bat
 before maven builds the project this command is executed:
 
 ```bash
-$ if not "%SomeVariable%"=="html-gen" SETX -m html-gen"%cd%"
+$ if not "%SomeVariable%"=="html-gen" SETX html-gen"%cd%"
 ```
 
 this will create a system variable "html-gen". so you can run the hatml-gen in your comand with html-gen

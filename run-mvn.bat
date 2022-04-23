@@ -1,5 +1,6 @@
 echo off
 
-if not "%SomeVariable%"=="html-gen" SETX -m html-gen "%cd%"
+if not "%SomeVariable%"=="html-gen" SETX html-gen "%cd%"
 
+mvn wrapper:wrapper
 ./mvnw clean install
